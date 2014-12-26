@@ -8,10 +8,6 @@ module.exports = function(grunt) {
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
-    libs = [
-        'bower_components/jquery/jquery.js'
-    ];
-
     grunt.initConfig({
         // Read package information so we can use it later on
         pkg: grunt.file.readJSON('package.json'),
@@ -30,13 +26,6 @@ module.exports = function(grunt) {
                 // the location of the resulting JS file
                 dest: 'dist/<%= pkg.name %>.js'
             },
-            // The libs, oryjs uses
-            libs: {
-                // the files to concatenate
-                src: libs,
-                // the location of the resulting JS file
-                dest: 'dist/<%= pkg.name %>-libs.js'
-            }
         },
         // Minigy js files
         uglify: {
@@ -46,8 +35,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    '<%= pkg.name %>.min.js': ['<%= concat.source.dest %>'],
-                    '<%= pkg.name %>-libs.min.js': ['<%= concat.libs.dest %>']
+                    '<%= pkg.name %>.min.js': ['<%= concat.source.dest %>']
                 }
             }
         },
@@ -58,7 +46,7 @@ module.exports = function(grunt) {
                     // includes files within path
                     {expand: true, cwd: 'dist/', src: ['*.js'], dest: './'},
                 ]
-            },
+            }
         },
         // Run code analysis
         jshint: {

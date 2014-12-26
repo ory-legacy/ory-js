@@ -1,4 +1,4 @@
-var Ory = (function () {
+var ory = (function () {
     var Service = function (config) {
         var that = this,
             defaults;
