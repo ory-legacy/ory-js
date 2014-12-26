@@ -1,10 +1,11 @@
 {
-  "name": "Ory Library",
-  "version": "0.0.1",
-  "dependencies": {
-    "jquery": "~1.10.2",
-    "underscore": "~1.5.2",
-    "requirejs": "~2.1.8",
-    "angular-translate": "~2.5.2"
-  }
+    "name": "ory-js",
+    "version": "0.0.1",
+    "main": "ory.js",
+    "ignore": [
+        ".jshintrc"
+    ],
+    "dependencies": {
+        "jquery": "~1.10.2"
+    }
 }
